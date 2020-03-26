@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FiLogIn } from 'react-icons/fi';
 import { Link, useHistory } from 'react-router-dom';
 
@@ -15,20 +15,27 @@ export default function Logon() {
 
   const history = useHistory();
 
+  const userData = JSON.parse(localStorage.getItem('bethehero/auth'));
+
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
       const res = await api.post('/sessions', { id });
       
-      localStorage.setItem('bethehero/auth', { id: id, name: res.data.name })
+      localStorage.setItem('bethehero/auth', JSON.stringify({ id: id, name: res.data.name }));
 
       history.push('/profile');
     } catch(err) {
       alert('ID invalido, tente novamente.');
     }
-    
   }
+
+  useEffect(() => {
+    if (userData) {
+      history.push('/profile');
+    }
+  }, []);
 
   return (
     <div className="logon-container">

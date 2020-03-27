@@ -9,6 +9,8 @@ module.exports = {
       .select('name')
       .first();
 
+    console.log(id);
+
     if (!ong) {
       return res.status(400).json({ error: 'No ONG found with this ID' });
     }

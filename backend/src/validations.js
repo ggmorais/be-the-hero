@@ -24,9 +24,12 @@ module.exports = {
 
   session: {
     create: celebrate({
-      [Segments.HEADERS]: Joi.object({
-        authorization: Joi.string().required(),
-      }).unknown()
+      [Segments.BODY]: Joi.object().keys({
+        id: Joi.string().required()
+      })
+      // [Segments.HEADERS]: Joi.object({
+      //   authorization: Joi.string().required(),
+      // }).unknown()
     })
   },
 

@@ -27,9 +27,9 @@ Its an project that I made for my portfolio and for learning purpose when I part
 
 first `cd backend`
 
-* Environmend configuration:
+* Environment configuration:
   1. edit the `.env.example` with your own settings
-  2. remove the `.env.example` to `.env`
+  2. rename the `.env.example` to `.env`
 * Running:
   * `yarn && yarn dev` or `npm install && npm run dev` in the root
 
@@ -37,7 +37,7 @@ first `cd backend`
 
 first `cd frontend`
 
-* Environmend configuration:
+* Environment configuration:
   * navigate to `src/services/api.js` and edit the baseUrl port to your backend port (by default is 5000)
 * Running:
   * `yarn && yarn start` or `npm install && npm start` in the root
@@ -47,9 +47,9 @@ first `cd frontend`
 
 first `cd mobile`
 
-for that you will need an android/ios device emulator
+for that you will need an android/ios emulator
 
-* Environmend configuration:
+* Environment configuration:
   * navigate to `src/services/api.js` and edit the baseUrl port to your backend port (by default is 5000)
 * Running:
   * `yarn` or `npm install` in the root
